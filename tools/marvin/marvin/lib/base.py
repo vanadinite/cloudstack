@@ -1917,6 +1917,9 @@ class ServiceOffering:
 
         if "offerha" in services:
             cmd.offerha = services["offerha"]
+            
+        if "hypervisorsnapshotreserve" in services:
+            cmd.hypervisorsnapshotreserve = services["hypervisorsnapshotreserve"]
 
         # Service Offering private to that domain
         if domainid:
@@ -1980,6 +1983,9 @@ class DiskOffering:
 
         if "provisioningtype" in services:
             cmd.provisioningtype = services["provisioningtype"]
+            
+        if "hypervisorsnapshotreserve" in services:
+            cmd.hypervisorsnapshotreserve = services["hypervisorsnapshotreserve"]
 
         return DiskOffering(apiclient.createDiskOffering(cmd).__dict__)
 
